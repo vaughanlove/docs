@@ -34,8 +34,8 @@ client = chromadb.PersistentClient(path="/path/to/save/to")
 
 The `path` is where Chroma will store its database files on disk, and load them on start.
 
-:::info Use a single client at-a-time
-Having many clients that are loading and saving to the same path can cause strange behavior including data deletion. As a general practice, create a Chroma client once in your application, and pass it around instead of creating many clients.
+:::caution Use a single client at-a-time
+Having many clients that are loading and saving to the same path can cause strange behavior including data deletion. Create a Chroma client once in your application, and pass it around instead of creating many clients. An error will be thrown if you try to create multiple clients.
 :::
 
 </TabItem>
